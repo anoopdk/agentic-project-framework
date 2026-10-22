@@ -1,0 +1,41 @@
+# DESIGN INDEX — topics and selection intent, not a functioning rules engine.
+version: "0.1-design"
+domains:
+  architecture:
+    file: standards/architecture.md
+    triggers: [new_platform, layer_change, architectural_change]
+    workflows: [audit, scope, architect, develop, check]
+  ingestion:
+    file: standards/data-ingestion.md
+    triggers: [new_source, incremental_load, cdc, schema_change, backfill]
+    workflows: [audit, architect, develop, check, test]
+  modelling:
+    file: standards/data-modelling.md
+    triggers: [dimension, fact, scd, business_metric, grain_change]
+    workflows: [architect, develop, check, test]
+  pipelines:
+    file: standards/pipeline-design.md
+    triggers: [orchestration, scheduler, retry, recovery, watermark]
+    workflows: [architect, develop, check, test]
+  quality:
+    file: standards/data-quality.md
+    triggers: [new_source, data_contract, business_metric, schema_change]
+    workflows: [architect, develop, check, test]
+  security:
+    file: standards/security-governance.md
+    triggers: [pii, permissions, grants, secret, new_source, production_access]
+    workflows: [audit, architect, develop, check, test]
+  testing:
+    file: standards/testing.md
+    triggers: [new_feature, defect, schema_change, metric_change]
+    workflows: [develop, check, test]
+  deployment:
+    file: standards/deployment.md
+    triggers: [environment_change, infrastructure, ci_cd, compute_config]
+    workflows: [architect, develop, check, test]
+  observability:
+    file: standards/observability.md
+    triggers: [sla, pipeline, compute_config, performance, cost]
+    workflows: [architect, develop, check, test]
+# NOTE: referenced standards documents are planned, not yet authored.
+# A resolver must not hallucinate contents of missing files; escalate and use approved project guidance.
