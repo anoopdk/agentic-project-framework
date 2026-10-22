@@ -44,6 +44,7 @@ flowchart TB
 | --- | --- |
 | [AGENTS.md](AGENTS.md) | Entry instructions for any AI agent |
 | [FRAMEWORK-DESIGN.md](docs/FRAMEWORK-DESIGN.md) | Goals, layers, architecture, workflow and invariants |
+| [DESIGN-DISCUSSION-AND-RATIONALE.md](docs/DESIGN-DISCUSSION-AND-RATIONALE.md) | Detailed discussion: alternatives, concerns, trade-offs, decisions and examples |
 | [ADOPTION-PLAYBOOK.md](docs/ADOPTION-PLAYBOOK.md) | Reproduction into existing or new repositories |
 | [ROUTING-CONTRACT.md](router/ROUTING-CONTRACT.md) | Intent resolution, gates, stop rules and re-entry |
 | [Policies](policies/) | Authority, approval and safe execution |
@@ -61,4 +62,4 @@ flowchart TB
 
 ## Provenance and adaptation
 
-Inspired by JS Mastery's [skills](https://jsmastery.com/skills) and [workflow guides](https://jsmastery.com/workflow-guides#guide-reference), and refined for human-led Data Engineering project work. This repository documents an independent design, not a copy of proprietary skill implementations. Future skills must be implemented, tested and reviewed individually.
+References: [Engineering System for AI Agents (video)](https://www.youtube.com/watch?v=Vok_nReMFaU), JS Mastery's [skills](https://jsmastery.com/skills) and [workflow guides — guide reference](https://jsmastery.com/workflow-guides#guide-reference). See the [detailed design discussion](docs/DESIGN-DISCUSSION-AND-RATIONALE.md) for original considerations, rejected alternatives, and the rationale for the agreed direction. This repository documents an independent design, not a copy of proprietary skill implementations. Future skills must be implemented, tested and reviewed individually.
