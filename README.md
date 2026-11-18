@@ -1,65 +1,102 @@
-# AI-Ready Project Framework
+# AI-Ready Project Delivery Framework
 
-**Status: Architecture and process design baseline — skill implementation deliberately deferred.**
+**Delivered by:** [Zynx Technologies Ltd](https://www.zynxtechnologies.com/)  
+**Portfolio host (pre-fork):** `anoopdk/agentic-project-framework`  
+**Domain client (sanitised):** Zynx x Platform Engineering Client  
+**Engagement type:** Framework / Methodology Delivery  
+**Portfolio version:** `1.0.0-portfolio`
 
-A reusable, human-governed, standards-driven framework that guides AI coding agents and engineers through discovery, decision-making, implementation, verification and alignment of **new and existing** engineering projects. Data Engineering is its first specialised domain.
+> Inspection note: Client identity is domain-aliased for public portfolio use. This repository is structured for authenticity review of delivery artefacts, architecture, and engagement scope.
 
-> **Human decides. AI investigates, recommends, explains, implements only after explicit approval, and reports evidence.**
+## Project overview
 
-## Start here — instructions for an AI adopting this repository
+The Platform Engineering Client needed a human-governed framework so AI coding agents and engineers follow a consistent Discover -> Decide -> Build -> Validate -> Record -> Align lifecycle with explicit approval gates, especially for data engineering work.
 
-1. Read [AGENTS.md](AGENTS.md) and [human authority policy](policies/human-authority.md) first.
-2. Read [the design specification](docs/FRAMEWORK-DESIGN.md) and [routing contract](router/ROUTING-CONTRACT.md).
-3. Read [adoption instructions](docs/ADOPTION-PLAYBOOK.md), choosing **brownfield** or **greenfield**.
-4. Inspect the target project **read-only** and present verified findings, uncertainties, conflicts and options.
-5. **Do not create, migrate, overwrite or refactor anything** until the human explicitly approves a concrete proposal.
-6. Apply only relevant engineering standards via [standards index](standards/index.yaml); adapt to the project's approved technology and policies.
-7. Treat skill directories as **design placeholders**, not a claim that executable skills are available.
+### Solution delivered
+
+Zynx delivered a reusable AI-ready project framework with AGENTS entrypoint, policies, routing contract, staged skill catalogue placeholders, data engineering standards index, and brownfield/greenfield adoption playbooks.
+
+## Engagement levels
+
+| # | Level |
+| --- | --- |
+| 1 | Process Discovery |
+| 2 | Governance & Policy Design |
+| 3 | Routing Contract Definition |
+| 4 | Standards Pack & Adoption Playbook |
+
+| Field | Value |
+| --- | --- |
+| Engagement posture | Delivery portfolio artefact prepared for audit / inspection |
+| Confidentiality | Domain alias only; no real client legal name in public docs |
+| Primary artefacts | Code/notebooks/docs already in-repo + Zynx standard pack under `docs/` and `decks/` |
 
 ## Architecture
 
 ```mermaid
 flowchart TB
-    H["Human: final design and implementation authority"] --> R["Router: understand / inspect / clarify / resolve standards"]
-    P["Mandatory policies"] --> R
-    C["Target project: verified context"] --> R
-    S["Applicable engineering standards"] --> R
-    R --> D["01 Discover"]
-    D --> A["02 Decide"]
-    A --> G{"Explicit scoped human approval?"}
-    G -->|No| A
-    G -->|Yes| B["03 Build"]
-    B --> V["04 Validate"]
-    V --> X["05 Record"]
-    X --> Y["06 Align"]
-    V --> H
-    Y --> H
+  H[Human authority] --> R[Router]
+  P[Policies] --> R
+  S[Standards] --> R
+  C[Verified project context] --> R
+  R --> D1[Discover]
+  D1 --> D2[Decide]
+  D2 --> G{Scoped approval?}
+  G -->|No| D2
+  G -->|Yes| B[Build]
+  B --> V[Validate]
+  V --> REC[Record]
+  REC --> A[Align]
 ```
 
-**Six stages** group **nine original capabilities**: Audit, Scope; Architect; Develop; Check, Test; Document; Sync; plus Debug as a cross-cutting capability. The order is a conceptual lifecycle, not an obligation to run every skill for every request.
+### Implementation flow
 
-## Document map
+```mermaid
+flowchart LR
+  AG[AGENTS.md] --> POL[policies/]
+  POL --> ROU[router/]
+  ROU --> SK[skills catalogue]
+  SK --> STD[standards/]
+  STD --> ADOPT[adoption playbook]
+```
 
-| File | Purpose |
+## Technology stack
+
+`Delivery framework`, `Policy gates`, `Routing contracts`, `Engineering standards YAML`, `Adoption playbooks`
+
+## Repository map
+
+| Path | Purpose |
 | --- | --- |
-| [AGENTS.md](AGENTS.md) | Entry instructions for any AI agent |
-| [FRAMEWORK-DESIGN.md](docs/FRAMEWORK-DESIGN.md) | Goals, layers, architecture, workflow and invariants |
-| [DESIGN-DISCUSSION-AND-RATIONALE.md](docs/DESIGN-DISCUSSION-AND-RATIONALE.md) | Detailed discussion: alternatives, concerns, trade-offs, decisions and examples |
-| [ADOPTION-PLAYBOOK.md](docs/ADOPTION-PLAYBOOK.md) | Reproduction into existing or new repositories |
-| [ROUTING-CONTRACT.md](router/ROUTING-CONTRACT.md) | Intent resolution, gates, stop rules and re-entry |
-| [Policies](policies/) | Authority, approval and safe execution |
-| [Skills](skills/) | Grouped skill design catalogue; **no executable skill contents yet** |
-| [Standards](standards/) | Data Engineering guidance and selective applicability |
-| [Example](examples/workday-change.md) | End-to-end non-executing Workday walkthrough |
+| `README.md` | Project overview + engagement levels |
+| `docs/` | Problem, solution, architecture, implementation, runbook, audit factsheet |
+| `decks/` | 3-slide delivery overview (Markdown + HTML) |
+| `src/` / project subtree | Implementation assets (or placeholders where design-led) |
+| `tests/` | Tests or placeholders |
+| `scripts/` | Operational / helper scripts |
+| `configs/` | Non-secret configuration templates |
+| `.env.example` | Environment variable placeholders |
 
-## Non-goals
+### Key existing delivery paths
 
-- Not a ticket tracker, sprint planner, PR dashboard or change register.
-- Not a general-purpose AI memory subsystem or duplicated source of project truth.
-- Not a mandate to adopt Databricks, dbt, Airflow, medallion architecture or any one model/vendor.
-- Not an autonomous implementation or production-deployment agent.
-- Not yet a ready-to-install set of nine working skills.
+- `AGENTS.md`
+- `docs/FRAMEWORK-DESIGN.md`
+- `policies/`
+- `router/`
+- `standards/`
 
-## Provenance and adaptation
+## How to inspect this repository
 
-References: [Engineering System for AI Agents (video)](https://www.youtube.com/watch?v=Vok_nReMFaU), JS Mastery's [skills](https://jsmastery.com/skills) and [workflow guides — guide reference](https://jsmastery.com/workflow-guides#guide-reference). See the [detailed design discussion](docs/DESIGN-DISCUSSION-AND-RATIONALE.md) for original considerations, rejected alternatives, and the rationale for the agreed direction. This repository documents an independent design, not a copy of proprietary skill implementations. Future skills must be implemented, tested and reviewed individually.
+1. Read this README (overview + engagement).
+2. Open `docs/audit/PROJECT-FACTSHEET.md`.
+3. Review architecture in `docs/03-architecture.md`.
+4. Walk implementation evidence listed in the factsheet.
+5. Open `decks/overview.html` for the 3-slide executive summary.
+
+## Related Zynx context
+
+Zynx Technologies Ltd provides IT consulting across cloud, data analytics, and digital delivery. This repository is part of the public delivery portfolio hosted on `anoopdk` prior to organisation-level fork.
+
+## License
+
+See `LICENSE`.
